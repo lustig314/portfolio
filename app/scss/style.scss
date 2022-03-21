@@ -1,0 +1,272 @@
+@import 'vars';
+@import 'fonts';
+@import 'libs';
+@import 'global';
+
+.header__container {
+  position: relative;
+}
+
+.menu {
+  border-bottom: 1px solid #828282;
+  padding: 35px 0;
+  margin-bottom: 40px;
+
+  &__list {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+
+  }
+
+  &__list-link {
+    color: #828282;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+
+}
+
+.burger-menu {
+  display: none;
+}
+
+.header {
+  margin-bottom: 105px;
+
+  &__main {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    align-items: end;
+    margin-bottom: 50px;
+  }
+
+  &__name {
+    font-size: 47px;
+    line-height: 59px;
+    max-width: 125px;
+    margin-bottom: -10px;
+  }
+
+  &__info {
+    font-weight: 500;
+    max-width: 240px;
+  }
+}
+
+.lang-switcher {
+  writing-mode: vertical-rl;
+  transform: rotate(180deg);
+
+  label {
+    font-size: 16px;
+    line-height: 20px;
+    color: #828282;
+    cursor: pointer;
+    text-transform: uppercase;
+  }
+
+  label:not(:last-child) {
+    margin-bottom: 5px;
+    position: relative;
+
+    &::after {
+      position: absolute;
+      content: '|';
+      color: #000000;
+      bottom: -7px;
+    }
+  }
+
+  &__item:checked + label {
+    color: #000000
+  }
+}
+
+.about {
+  background-color: #F6F6F6;
+  padding: 120px 0;
+
+  &__title {
+    margin-bottom: 40px;
+  }
+
+  &__text {
+    margin: 0 auto;
+    text-align: center;
+    max-width: 485px;
+    font-weight: 500;
+
+    &:not(:last-child) {
+      margin-bottom: 50px;
+    }
+  }
+}
+
+.skills {
+  padding: 90px 0 110px;
+
+  &__title {
+    margin-bottom: 70px;
+  }
+
+  &__text {
+    font-weight: 500;
+    text-align: center;
+    margin-bottom: 90px;
+  }
+
+  &__list {
+    display: flex;
+    justify-content: space-between;
+    align-items: end;
+    flex-wrap: wrap;
+  }
+}
+
+.skill-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  &__image {
+    margin-bottom: 25px;
+  }
+
+  &__title {
+    font-size: 14px;
+    line-height: 17px;
+    text-align: center;
+    color: #828282;
+    margin-bottom: 40px;
+  }
+}
+
+// Анимиция уровня знаний
+
+.active-animate {
+  &.skill-animate-1,
+  &.skill-animate-2,
+  &.skill-animate-3,
+  &.skill-animate-4,
+  &.skill-animate-5, {
+    animation-name: fillStar;
+    animation-duration: 2s;
+    animation-fill-mode: forwards;
+  }
+
+  &.skill-animate-1 {
+    animation-delay: 1s;
+  }
+
+  &.skill-animate-2 {
+    animation-delay: 1.5s;
+  }
+
+  &.skill-animate-3 {
+    animation-delay: 2s;
+  }
+  &.skill-animate-4 {
+    animation-delay: 2.5s;
+  }
+  &.skill-animate-5 {
+    animation-delay: 3s;
+  }
+}
+
+
+@keyframes fillStar {
+  0% {
+    fill: #E5E5E5;
+  }
+  100% {
+    fill: #070707;
+  }
+}
+
+
+.portfolio {
+  background-color: #F6F6F6;
+  padding: 120px 0 90px;
+
+  &__list-item:not(:last-child) {
+    margin-bottom: 100px;
+  }
+
+  &__title {
+    margin-bottom: 40px;
+  }
+
+  &__image {
+    margin-bottom: 45px;
+  }
+
+  &__link {
+    font-weight: 500;
+    text-align: center;
+    display: block;
+    text-decoration-line: underline;
+
+  }
+
+}
+
+.footer {
+  padding: 120px 0 125px;
+
+  &__title {
+    margin-bottom: 40px;
+  }
+
+  &__text-top {
+    font-weight: 500;
+    text-align: center;
+    max-width: 275px;
+    margin: 0 auto 35px;
+  }
+
+  &__btn {
+    display: block;
+    margin: 0 auto 85px;
+    width: 180px;
+    text-align: center;
+    color: #ffffff;
+    padding: 13px 28px;
+    border: 1px solid transparent;
+    border-radius: 20px;
+    background-color: #070707;
+    cursor: pointer;
+    transition: all .3s;
+
+    &:hover {
+      background-color: #fff;
+      color: #070707;
+      border: 1px solid #070707;
+    }
+  }
+
+  &__text-bottom {
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 17px;
+    text-align: center;
+    color: #828282;
+  }
+}
+
+.socials {
+  margin: 0 auto 45px;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  align-items: center;
+  max-width: 342px;
+}
+
+
+@import 'media';
+
+
